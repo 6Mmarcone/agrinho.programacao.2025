@@ -41,11 +41,14 @@
         }
         .section h2 {
             color: #333;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
         .products, .services {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            gap: 20px;
         }
         .card {
             background-color: white;
@@ -54,16 +57,64 @@
             padding: 20px;
             width: 200px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
         }
         .card img {
             width: 100%;
             height: auto;
+            border-radius: 8px;
+        }
+        .card h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .card p {
+            color: #777;
+            font-size: 0.9rem;
+            margin-top: 5px;
         }
         footer {
             background-color: #333;
             color: white;
             padding: 10px 0;
             text-align: center;
+            font-size: 0.9rem;
+        }
+        /* Formulário de contato */
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .products, .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -83,6 +134,7 @@
 <section id="about" class="section">
     <h2>Sobre Nós</h2>
     <p>Somos uma empresa dedicada a oferecer soluções inovadoras para o setor agrícola. Com o uso de tecnologias avançadas, ajudamos a melhorar a produtividade e a sustentabilidade no campo.</p>
+    <p>Nossos produtos e serviços são desenvolvidos para atender às necessidades do agronegócio, promovendo um campo mais inteligente e eficiente.</p>
 </section>
 
 <section id="products" class="section">
@@ -91,17 +143,17 @@
         <div class="card">
             <img src="https://via.placeholder.com/200" alt="Produto 1">
             <h3>Produto 1</h3>
-            <p>Descrição breve do produto 1.</p>
+            <p>Descrição breve do produto 1. Ideal para melhorar o rendimento no campo.</p>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/200" alt="Produto 2">
             <h3>Produto 2</h3>
-            <p>Descrição breve do produto 2.</p>
+            <p>Descrição breve do produto 2. Tecnologia de ponta para o agronegócio.</p>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/200" alt="Produto 3">
             <h3>Produto 3</h3>
-            <p>Descrição breve do produto 3.</p>
+            <p>Descrição breve do produto 3. A solução perfeita para aumentar a produtividade.</p>
         </div>
     </div>
 </section>
@@ -111,23 +163,30 @@
     <div class="services">
         <div class="card">
             <h3>Consultoria Agrícola</h3>
-            <p>Ajudamos a otimizar as operações agrícolas com consultoria especializada.</p>
+            <p>Ajudamos a otimizar as operações agrícolas com consultoria especializada em diversas áreas do campo.</p>
         </div>
         <div class="card">
             <h3>Inovação Tecnológica</h3>
-            <p>Oferecemos as últimas inovações em tecnologia agrícola para aumentar a produtividade.</p>
+            <p>Oferecemos as últimas inovações em tecnologia agrícola para aumentar a produtividade e sustentabilidade.</p>
         </div>
         <div class="card">
             <h3>Treinamentos</h3>
-            <p>Realizamos treinamentos para capacitar equipes a lidar com novas tecnologias agrícolas.</p>
+            <p>Realizamos treinamentos especializados para capacitar equipes a lidar com novas tecnologias agrícolas e técnicas.</p>
         </div>
     </div>
 </section>
 
 <section id="contact" class="section">
     <h2>Contato</h2>
-    <p>Email: contato@agroapp.com.br</p>
-    <p>Telefone: (11) 1234-5678</p>
+    <p>Entre em contato conosco para mais informações sobre nossos produtos e serviços!</p>
+    <div class="contact-form">
+        <form>
+            <input type="text" name="name" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <textarea name="message" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
 </section>
 
 <footer>
@@ -136,3 +195,7 @@
 
 </body>
 </html>
+
+
+
+
